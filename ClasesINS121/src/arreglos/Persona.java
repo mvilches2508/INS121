@@ -22,9 +22,12 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String nombre, int edad){
+    public Persona(String nombre, int edad, double peso, char sexo, boolean isCasado){
         this.nombre = nombre;
-    
+        this.edad = edad;
+        this.peso = peso;
+        this.sexo = sexo;
+        this.isCasado = isCasado;
     }
 
     public String getNombre() {

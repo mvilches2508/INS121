@@ -84,21 +84,28 @@ public class Menu {
             System.out.println("Ingrese nombre : ");
             String nombre = lector.next();
             System.out.println("Ingrese edad : ");
-            int edad = Integer.parseInt(lector.next());        
-            /*System.out.println("Ingrese peso : ");
+            int edad = Integer.parseInt(lector.next());               
+            System.out.println("Ingrese peso : ");
             double peso = Double.parseDouble(lector.next());
             System.out.println("Ingrese sexo : ");
-            char sexo = lector.next();
-            System.out.println("Es cadado? : ");
+            String sexoString = lector.next();
+            char sexo = sexoString.charAt(0);
+            System.out.println("Es casado? : ");
             boolean isMarried = Boolean.parseBoolean(lector.next());
-*/
-            personas.add(new Persona(nombre, edad));
+
+            personas.add(new Persona(nombre, edad, peso, sexo,isMarried));
             cont--;
         }
-        for (int i = 0; i < personas.size(); i++) {
+        for (int i = 1; i < personas.size(); i++) {
             Persona personaConsultada = personas.get(i);
-            System.out.println("nombre: "+personaConsultada.getNombre());
-            System.out.println("edad: "+personaConsultada.getEdad());
+            System.out.println("===========================================");
+            System.out.println("Datos Persona N°"+i);
+            System.out.println("nombre "+personaConsultada.getNombre());
+            System.out.println("edad : "+personaConsultada.getEdad());
+            System.out.println("Peso : "+personaConsultada.getPeso());
+            System.out.println("Sexo : "+personaConsultada.getSexo());
+            System.out.println("Estado Civil : "+personaConsultada.isIsCasado());
+            System.out.println("===========================================");
         }
         
     }
