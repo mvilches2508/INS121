@@ -21,8 +21,17 @@ public class Menu {
     public static void main(String[] args) {
 
         try {
-            File archivo = new File("C:\\Desarrollo\\basededatos.txt");
+            File archivo = new File("src\\Usuarios\\usuariosBD.txt");
+            System.out.println("Esto es un directorio ? :"+ archivo.isDirectory());
+            System.out.println("Se puede leer ? :"+ archivo.canRead());
+            System.out.println("Se puede escribir? :"+ archivo.canWrite());
+            System.out.println("Peso: "+ archivo.length());
+            System.out.println("Nombre :"+ archivo.getName());
+            System.out.println("ruta :"+ archivo.getPath());
+            System.out.println("ruta absoluta: "+ archivo.getAbsolutePath());
+            
             FileOutputStream fostm = new FileOutputStream(archivo);
+            
             String info ="INFORMACION CARGADA EN TEXTO";
             StringBuffer texto = new StringBuffer();
             texto.append(info);
@@ -42,8 +51,7 @@ public class Menu {
             fostm.write(contenido);
             fostm.flush();
             fostm.close();
-            int i = 1;
-            int j = i/0;
+           
 
         } catch (IOException ex) {
             System.out.println("Error al manejar archivos: " + ex);
